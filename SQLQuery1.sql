@@ -117,7 +117,7 @@ WHERE Ab.AlbumId IS NULL;
 -- Listar los artistas con el número de albums que tienen
 SELECT A.Name, COUNT(Ab.AlbumId) AS NumAlbums
 FROM dbo.Artist A
-INNER JOIN dbo.Album Ab
+FULL JOIN dbo.Album Ab
 ON A.ArtistId = Ab.ArtistId
 GROUP BY A.ArtistId, A.Name
 ORDER BY NumAlbums DESC;
